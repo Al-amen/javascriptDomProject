@@ -4,13 +4,18 @@ window.onload = () => {
 
 function main() {
     const body = document.querySelector('body');
-    const btn = document.getElementById('change-color'); // corrected method name
+    const copyBtn = document.getElementById('copy-btn'); // corrected method name
     const output = document.getElementById('output');
+    const changeBtn = document.getElementById('change-color');
 
-    btn.addEventListener('click', function () {
+   changeBtn.addEventListener('click', function () {
         const bgcolor = generateRgbColor();
         body.style.background = bgcolor;
         output.value = bgcolor
+   });
+    copyBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText(output.value);
+        console.log(navigator.clipboard.writeText = (output.value))
     });
 
 }
